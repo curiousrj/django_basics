@@ -58,3 +58,19 @@ migration connection to database -<br/>
 python manage.py sqlmigrate travello 0001<br/>
 migrate -<br/>
 python manage.py migrate<br/>
+create super user -<br/>
+python manage.py createsuperuser<br/>
+create admin page -<br/>
+from django.contrib import admin<br/>
+from .models import Destination<br/>
+admin.site.register(Destination)<br/>
+change settings to insert media -<br/>
+MEDIA_URL = '/media/'<br/>
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')<br/>
+change urls to insert media -<br/>
+from django.conf import settings<br/>
+from django.conf.urls.static import static<br/>
+urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)<br/>
+fetch database and upload to website -<br/>
+dests = Destination.objects.all()<br/>
+img src="{{dest.img.url}}" alt=""><br/>
