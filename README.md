@@ -74,3 +74,14 @@ urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root = settings.
 fetch database and upload to website -<br/>
 dests = Destination.objects.all()<br/>
 img src="{{dest.img.url}}" alt=""><br/>
+push data to database -<br/>
+from django.contrib.auth.models import User<br/>
+user = User.objects.create_user(first_name = first_name, last_name = last_name, username = username, email = email, password = password1)<br/>
+user.save()<br/>
+use filter for data -<br/>
+User.objects.filter(username=username).exists()<br/>
+use messages -<br/>
+from django.contrib import messages<br/>
+messages.info(request, 'Password Not Matched')<br/>
+use redirect -<br/>
+return render(request, 'register.html')<br/>
