@@ -1,4 +1,4 @@
-# djange_basics
+# django_basics
 
 create project - django-admin startproject projectname<br/>
 create app - django-admin startapp appname<br/>
